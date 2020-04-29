@@ -4,7 +4,8 @@ services:
   tmweb:
     image: httpd:alpine
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - "8888:80"
     depends_on:
       - tmapp
     volumes:
@@ -14,7 +15,7 @@ services:
     image: dennyverbeeck/transmart-app:etriks-v4.0
     restart: unless-stopped
     ports:
-      - "127.0.0.1:8009:8009"
+      - "8009:8009"
     depends_on:
       - tmdb
       - tmsolr
@@ -33,7 +34,7 @@ services:
     image: dennyverbeeck/transmart-db:etriks-v4.0
     restart: unless-stopped
     ports:
-      - "127.0.0.1:5432:5432"
+      - "5432:5432"
     volumes:
       - "postgresdata:/var/lib/postgresql"
       - "postgreslogs:/var/log/postgresql"

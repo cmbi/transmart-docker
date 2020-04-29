@@ -22,7 +22,7 @@ def oauthEnabled      = true
 def samlEnabled       = false
 def gwavaEnabled      = false
 def ldapEnabled       = false
-def transmartURL      = "http://localhost/transmart"
+def transmartURL      = "http://www3.cmbi.umcn.nl/transmart/"
 
 //Disabling/Enabling UI tabs
 ui {
